@@ -7,3 +7,4 @@ Yes, we arrive that. And now we try to pull the modification to our local comput
 Everything goes well!!!
 Git from Mac!
 OK, received, then push from Github.
+Last test from Mac.
