@@ -14,6 +14,7 @@ import winsound
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import TimeoutException
  
 chromeOptions = Options()
 chromeOptions.add_experimental_option('useAutomationExtension', False)
@@ -76,7 +77,7 @@ def possible():
             print("Need to try later")
             driver.quit()
         else:
-            print("Find the error:", er)
+            print("Find the error.", er)
             driver.quit()
 
 
@@ -109,7 +110,7 @@ class MyTimer( object ):
 if __name__=="__main__":
     start = datetime.now()
     possible()
-    tmr = MyTimer( start, 60*4, possible)
+    tmr = MyTimer( start, 60*5, possible)
     tmr.start()
 
 
