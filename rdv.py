@@ -71,12 +71,12 @@ def possible():
             label.pack()
             root.attributes("-topmost", True)
             root.mainloop() 
-    except NoSuchElementException:
+    except (NoSuchElementException, TimeoutException) as er:
         if "502 Bad Gateway" in driver.title:
             print("Need to try later")
             driver.quit()
         else:
-            print("No such element")
+            print("Find the error:", er)
             driver.quit()
 
 
@@ -109,7 +109,7 @@ class MyTimer( object ):
 if __name__=="__main__":
     start = datetime.now()
     possible()
-    tmr = MyTimer( start, 60*10, possible)
+    tmr = MyTimer( start, 60*4, possible)
     tmr.start()
 
 
