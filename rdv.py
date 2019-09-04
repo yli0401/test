@@ -37,9 +37,9 @@ def google_test():
 def possible():
     print(datetime.now())    
     driver = webdriver.Chrome(chrome_options=chromeOptions, desired_capabilities=chromeOptions.to_capabilities())
-    driver.get('http://www.essonne.gouv.fr/booking/create/14056')
-    # driver.get('http://www.google.fr')
     try:
+        driver.get('http://www.essonne.gouv.fr/booking/create/14056')
+        # driver.get('http://www.google.fr')
         time.sleep(1)
         last_height = driver.execute_script("return document.body.scrollHeight")
         driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
