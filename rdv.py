@@ -73,12 +73,8 @@ def possible():
             root.attributes("-topmost", True)
             root.mainloop() 
     except (NoSuchElementException, TimeoutException) as er:
-        if "502 Bad Gateway" in driver.title:
-            print("Need to try later")
-            driver.quit()
-        else:
-            print("Find the error.", er)
-            driver.quit()
+        print("Find the error.", er)
+        driver.quit()
 
 
 
